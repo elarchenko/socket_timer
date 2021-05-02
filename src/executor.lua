@@ -42,12 +42,14 @@ function init()
   sntp_sync_time()
   tmr.start(timer)
   
-  cron.schedule("0 9 * * 1,2,3,4,5", switchOn)
-  cron.schedule("0 12 * * 0,6", switchOn)
+  cron.schedule("0 8 * * 1,2,3,4,5", switchOn)
+  cron.schedule("0 10 * * 1,2,3,4,5", switchOff)
   cron.schedule("0 13 * * 1,2,3,4,5", switchOn)
-  cron.schedule("0 11 * * 1,2,3,4,5", switchOff)
-  cron.schedule("0 14 * * 0,6", switchOff)
   cron.schedule("0 15 * * 1,2,3,4,5", switchOff)
+  cron.schedule("0 19 * * 1,2,3,4,5", switchOn)
+  cron.schedule("0 21 * * 1,2,3,4,5", switchOff)
+  cron.schedule("0 12 * * 0,6", switchOn)
+  cron.schedule("0 14 * * 0,6", switchOff)
 end
 
 wrapper.init = init
